@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan Adat Rote Ndao</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ===================================================
+     AUDIO
+     =================================================== -->
+<audio id="bg-music" loop preload="none">
+  <source src="Bruno Mars - Risk It All (Lyrics) [QLPVk075lCg].mp3" type="audio/mpeg"/>
+</audio>
+
+<!-- ===================================================
+     TOAST
+     =================================================== -->
+<div id="toast"></div>
+
+<!-- ===================================================
+     LIGHTBOX
+     =================================================== -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="Foto Prewedding"/>
+  <button id="lightbox-close">✕</button>
+</div>
+
+<!-- ===================================================
+     TENUN ROTE NDAO SIDE BORDERS (fixed)
+     =================================================== -->
+<div class="tenun-side-border left">
+  <svg width="52" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="tenunL" x="0" y="0" width="52" height="80" patternUnits="userSpaceOnUse">
+        <!-- Background strip -->
+        <rect width="52" height="80" fill="#0d2045"/>
+        <!-- Gold vertical stripes -->
+        <rect x="0" y="0" width="6" height="80" fill="#c9a84c" opacity="0.9"/>
+        <rect x="46" y="0" width="6" height="80" fill="#c9a84c" opacity="0.9"/>
+        <!-- Inner navy -->
+        <rect x="6" y="0" width="40" height="80" fill="#0a1628"/>
+        <!-- Geometric diamond motif -->
+        <polygon points="26,4 34,14 26,24 18,14" fill="#c9a84c" opacity="0.85"/>
+        <polygon points="26,4 34,14 26,24 18,14" fill="none" stroke="#e8c96a" stroke-width="1" opacity="0.5"/>
+        <circle cx="26" cy="14" r="3" fill="#e8c96a" opacity="0.9"/>
+        <!-- Cross lines -->
+        <line x1="6" y1="14" x2="46" y2="14" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+        <line x1="26" y1="0" x2="26" y2="28" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+        <!-- Mid diamond -->
+        <polygon points="26,30 32,38 26,46 20,38" fill="#2563a8" opacity="0.8" stroke="#c9a84c" stroke-width="1"/>
+        <circle cx="26" cy="38" r="2.5" fill="#c9a84c" opacity="0.9"/>
+        <!-- Small accents -->
+        <rect x="11" y="6" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,13,8)"/>
+        <rect x="37" y="6" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,39,8)"/>
+        <rect x="11" y="22" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,13,24)"/>
+        <rect x="37" y="22" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,39,24)"/>
+        <!-- Bottom section -->
+        <polygon points="26,50 34,60 26,70 18,60" fill="#c9a84c" opacity="0.85"/>
+        <circle cx="26" cy="60" r="3" fill="#e8c96a" opacity="0.9"/>
+        <line x1="6" y1="60" x2="46" y2="60" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+        <rect x="11" y="52" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,13,54)"/>
+        <rect x="37" y="52" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,39,54)"/>
+        <!-- Horizontal bands -->
+        <rect x="6" y="27" width="40" height="2" fill="#c9a84c" opacity="0.3"/>
+        <rect x="6" y="47" width="40" height="2" fill="#c9a84c" opacity="0.3"/>
+        <rect x="6" y="73" width="40" height="2" fill="#c9a84c" opacity="0.3"/>
+      </pattern>
+    </defs>
+    <rect width="52" height="100%" fill="url(#tenunL)"/>
+  </svg>
+</div>
+
+<div class="tenun-side-border right">
+  <svg width="52" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="tenunR" x="0" y="0" width="52" height="80" patternUnits="userSpaceOnUse">
+        <rect width="52" height="80" fill="#0d2045"/>
+        <rect x="0" y="0" width="6" height="80" fill="#c9a84c" opacity="0.9"/>
+        <rect x="46" y="0" width="6" height="80" fill="#c9a84c" opacity="0.9"/>
+        <rect x="6" y="0" width="40" height="80" fill="#0a1628"/>
+        <polygon points="26,4 34,14 26,24 18,14" fill="#c9a84c" opacity="0.85"/>
+        <polygon points="26,4 34,14 26,24 18,14" fill="none" stroke="#e8c96a" stroke-width="1" opacity="0.5"/>
+        <circle cx="26" cy="14" r="3" fill="#e8c96a" opacity="0.9"/>
+        <line x1="6" y1="14" x2="46" y2="14" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+        <line x1="26" y1="0" x2="26" y2="28" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+        <polygon points="26,30 32,38 26,46 20,38" fill="#2563a8" opacity="0.8" stroke="#c9a84c" stroke-width="1"/>
+        <circle cx="26" cy="38" r="2.5" fill="#c9a84c" opacity="0.9"/>
+        <rect x="11" y="6" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,13,8)"/>
+        <rect x="37" y="6" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,39,8)"/>
+        <rect x="11" y="22" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,13,24)"/>
+        <rect x="37" y="22" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,39,24)"/>
+        <polygon points="26,50 34,60 26,70 18,60" fill="#c9a84c" opacity="0.85"/>
+        <circle cx="26" cy="60" r="3" fill="#e8c96a" opacity="0.9"/>
+        <line x1="6" y1="60" x2="46" y2="60" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+        <rect x="11" y="52" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,13,54)"/>
+        <rect x="37" y="52" width="4" height="4" fill="#c9a84c" opacity="0.5" transform="rotate(45,39,54)"/>
+        <rect x="6" y="27" width="40" height="2" fill="#c9a84c" opacity="0.3"/>
+        <rect x="6" y="47" width="40" height="2" fill="#c9a84c" opacity="0.3"/>
+        <rect x="6" y="73" width="40" height="2" fill="#c9a84c" opacity="0.3"/>
+      </pattern>
+    </defs>
+    <rect width="52" height="100%" fill="url(#tenunR)"/>
+  </svg>
+</div>
+
+<!-- ===================================================
+     MUSIC & QUICK NAV
+     =================================================== -->
+<div id="music-player">
+  <button id="music-btn">♪</button>
+  <span id="music-label">Risk it all</span>
+</div>
+
+<div id="nav-dots"></div>
+
+<div id="quick-nav">
+  <button class="qnav-btn" onclick="scrollTo('gallery')">
+    🖼️
+    <span class="tooltip">GALERI</span>
+  </button>
+  <button class="qnav-btn" onclick="scrollTo('acara')">
+    📅
+    <span class="tooltip">ACARA</span>
+  </button>
+  <button class="qnav-btn" onclick="scrollTo('hadiah')">
+    🎁
+    <span class="tooltip">HADIAH</span>
+  </button>
+  <button class="qnav-btn" onclick="scrollTo('ucapan')">
+    💌
+    <span class="tooltip">UCAPAN</span>
+  </button>
+  <button class="qnav-btn" onclick="scrollTo('mempelai')">
+    💑
+    <span class="tooltip">MEMPELAI</span>
+  </button>
+</div>
+
+<!-- ===================================================
+     OPENING SCREEN
+     =================================================== -->
+<div id="opening-screen">
+  <!-- Tenun borders top -->
+  <div class="opening-tenun-top">
+    <svg width="100%" height="60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="tenunTop" x="0" y="0" width="80" height="60" patternUnits="userSpaceOnUse">
+          <rect width="80" height="60" fill="rgba(10,22,40,0.85)"/>
+          <rect x="0" y="0" width="80" height="6" fill="#c9a84c" opacity="0.9"/>
+          <rect x="0" y="54" width="80" height="6" fill="#c9a84c" opacity="0.9"/>
+          <rect x="0" y="6" width="80" height="48" fill="#0a1628" opacity="0.7"/>
+          <polygon points="40,8 52,24 40,40 28,24" fill="#c9a84c" opacity="0.8"/>
+          <circle cx="40" cy="24" r="4" fill="#e8c96a" opacity="0.9"/>
+          <rect x="16" y="10" width="6" height="6" fill="#c9a84c" opacity="0.5" transform="rotate(45,19,13)"/>
+          <rect x="58" y="10" width="6" height="6" fill="#c9a84c" opacity="0.5" transform="rotate(45,61,13)"/>
+          <rect x="16" y="38" width="6" height="6" fill="#c9a84c" opacity="0.5" transform="rotate(45,19,41)"/>
+          <rect x="58" y="38" width="6" height="6" fill="#c9a84c" opacity="0.5" transform="rotate(45,61,41)"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="60" fill="url(#tenunTop)"/>
+    </svg>
+  </div>
+
+  <div id="opening-bg"></div>
+  <div id="opening-gradient"></div>
+
+  <div id="opening-content">
+    <div class="invite-label">— Undangan Pernikahan Adat Rote Ndao —</div>
+    <!-- Sapaan nama tamu dari URL -->
+    <div id="sapaan-tamu" style="display:none; margin-bottom:14px;">
+      <div style="font-family:'Lato',sans-serif; font-size:12px; color:rgba(200,215,240,0.7); margin-bottom:4px;">Kepada Yth.</div>
+      <div id="nama-tamu-display" style="font-family:'Cinzel',serif; font-size:15px; letter-spacing:1px; color:var(--gold-light); font-weight:600;"></div>
+    </div>
+
+    <!-- Sasando SVG Decoration -->
+    <div style="margin-bottom:12px; opacity:0.7;">
+      <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <!-- Simplified Sasando icon -->
+        <ellipse cx="30" cy="36" rx="22" ry="14" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.8"/>
+        <ellipse cx="30" cy="36" rx="16" ry="10" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+        <rect x="28" y="4" width="4" height="34" rx="2" fill="#c9a84c" opacity="0.8"/>
+        <line x1="14" y1="30" x2="46" y2="30" stroke="#e8c96a" stroke-width="0.8" opacity="0.6"/>
+        <line x1="16" y1="34" x2="44" y2="34" stroke="#e8c96a" stroke-width="0.8" opacity="0.6"/>
+        <line x1="12" y1="38" x2="48" y2="38" stroke="#e8c96a" stroke-width="0.8" opacity="0.6"/>
+        <line x1="16" y1="42" x2="44" y2="42" stroke="#e8c96a" stroke-width="0.8" opacity="0.6"/>
+        <circle cx="30" cy="6" r="4" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
+        <circle cx="30" cy="6" r="1.5" fill="#c9a84c" opacity="0.9"/>
+      </svg>
+    </div>
+
+    <div class="couple-names">
+      Yohannes
+      <span class="ampersand">&amp;</span>
+      Maria
+    </div>
+    <div class="wedding-date">SABTU, 12 JULI 2026</div>
+    <div class="divider-gold"></div>
+    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; color:rgba(200,215,240,0.8); font-size:13px; margin-bottom:24px; letter-spacing:1px;">
+      Rote Ndao, Nusa Tenggara Timur
+    </div>
+    <button id="open-btn">
+      <span>💌</span>
+      <span>BUKA UNDANGAN</span>
+    </button>
+  </div>
+
+  <!-- Tenun borders bottom -->
+  <div class="opening-tenun-bottom">
+    <svg width="100%" height="60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="tenunBottom" x="0" y="0" width="80" height="60" patternUnits="userSpaceOnUse">
+          <rect width="80" height="60" fill="rgba(10,22,40,0.9)"/>
+          <rect x="0" y="0" width="80" height="6" fill="#c9a84c" opacity="0.9"/>
+          <rect x="0" y="54" width="80" height="6" fill="#c9a84c" opacity="0.9"/>
+          <rect x="0" y="6" width="80" height="48" fill="#0a1628" opacity="0.8"/>
+          <polygon points="40,8 52,24 40,40 28,24" fill="#c9a84c" opacity="0.8"/>
+          <circle cx="40" cy="24" r="4" fill="#e8c96a" opacity="0.9"/>
+          <rect x="8" y="24" width="6" height="6" fill="#c9a84c" opacity="0.4" transform="rotate(45,11,27)"/>
+          <rect x="66" y="24" width="6" height="6" fill="#c9a84c" opacity="0.4" transform="rotate(45,69,27)"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="60" fill="url(#tenunBottom)"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ===================================================
+     MAIN INVITATION
+     =================================================== -->
+<div id="main-invitation">
+
+<!-- ==================== SECTION: COVER ==================== -->
+<section id="cover" style="padding:60px 64px;">
+  <div class="cover-stars" id="cover-stars"></div>
+  <div class="particles-container"></div>
+
+  <!-- Sasando decoration background -->
+  <div style="position:absolute; right:80px; top:50%; transform:translateY(-50%); opacity:0.05; pointer-events:none;">
+    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="150" cy="200" rx="120" ry="80" fill="none" stroke="white" stroke-width="3"/>
+      <ellipse cx="150" cy="200" rx="90" ry="60" fill="none" stroke="white" stroke-width="2"/>
+      <ellipse cx="150" cy="200" rx="60" ry="40" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="140" y="20" width="20" height="190" rx="10" fill="white"/>
+      <line x1="50" y1="170" x2="250" y2="170" stroke="white" stroke-width="2"/>
+      <line x1="60" y1="185" x2="240" y2="185" stroke="white" stroke-width="2"/>
+      <line x1="40" y1="200" x2="260" y2="200" stroke="white" stroke-width="2"/>
+      <line x1="60" y1="215" x2="240" y2="215" stroke="white" stroke-width="2"/>
+      <circle cx="150" cy="28" r="20" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="150" cy="28" r="8" fill="white"/>
+    </svg>
+  </div>
+
+  <!-- Pohon Lontar decoration -->
+  <div style="position:absolute; left:80px; bottom:60px; opacity:0.05; pointer-events:none;">
+    <svg width="160" height="250" viewBox="0 0 160 250" xmlns="http://www.w3.org/2000/svg">
+      <!-- trunk -->
+      <rect x="72" y="80" width="16" height="170" rx="8" fill="white"/>
+      <!-- fronds -->
+      <ellipse cx="80" cy="60" rx="60" ry="20" fill="white" transform="rotate(-20,80,60)"/>
+      <ellipse cx="80" cy="60" rx="60" ry="20" fill="white" transform="rotate(20,80,60)"/>
+      <ellipse cx="80" cy="60" rx="60" ry="15" fill="white" transform="rotate(0,80,60)"/>
+      <ellipse cx="80" cy="60" rx="55" ry="15" fill="white" transform="rotate(-40,80,60)"/>
+      <ellipse cx="80" cy="60" rx="55" ry="15" fill="white" transform="rotate(40,80,60)"/>
+      <!-- fruits -->
+      <circle cx="80" cy="85" r="8" fill="white" opacity="0.6"/>
+      <circle cx="68" cy="88" r="7" fill="white" opacity="0.6"/>
+      <circle cx="92" cy="88" r="7" fill="white" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="cover-inner animate-on-scroll" style="transition-delay:0.2s;">
+    <div class="cover-frame">
+      <div class="corner-ornament tl"></div>
+      <div class="corner-ornament tr"></div>
+      <div class="corner-ornament bl"></div>
+      <div class="corner-ornament br"></div>
+
+      <div class="cover-eyebrow">✦ Undangan Pernikahan Adat Rote Ndao ✦</div>
+
+      <!-- Gold ornamental divider -->
+      <div style="margin-bottom:16px;">
+        <svg width="200" height="20" viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="10" x2="80" y2="10" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+          <polygon points="90,10 96,4 102,10 96,16" fill="#c9a84c" opacity="0.8"/>
+          <polygon points="100,10 106,4 112,10 106,16" fill="#c9a84c" opacity="0.6"/>
+          <line x1="120" y1="10" x2="200" y2="10" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="cover-title">Yohannes</div>
+      <div class="cover-and">— dan —</div>
+      <div class="cover-title">Maria</div>
+
+      <div style="margin:20px 0 10px;">
+        <svg width="200" height="20" viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="10" x2="80" y2="10" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+          <polygon points="90,10 96,4 102,10 96,16" fill="#c9a84c" opacity="0.8"/>
+          <polygon points="100,10 106,4 112,10 106,16" fill="#c9a84c" opacity="0.6"/>
+          <line x1="120" y1="10" x2="200" y2="10" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="cover-date-badge">
+        <span>📅</span>
+        <span>SABTU, 12 JULI 2026</span>
+        <span>|</span>
+        <span>08.00 WITA</span>
+      </div>
+
+      <div class="cover-location">🌴 Rote Ndao, Nusa Tenggara Timur 🌴</div>
+
+      <!-- Sasando mini icon -->
+      <div style="margin-top:20px; opacity:0.5;">
+        <svg width="40" height="40" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="38" rx="22" ry="14" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+          <rect x="28" y="4" width="4" height="36" rx="2" fill="#c9a84c"/>
+          <line x1="14" y1="32" x2="46" y2="32" stroke="#e8c96a" stroke-width="0.8"/>
+          <line x1="14" y1="38" x2="46" y2="38" stroke="#e8c96a" stroke-width="0.8"/>
+          <line x1="18" y1="44" x2="42" y2="44" stroke="#e8c96a" stroke-width="0.8"/>
+          <circle cx="30" cy="6" r="4" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+          <circle cx="30" cy="6" r="1.5" fill="#c9a84c"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: MEMPELAI ==================== -->
+<section id="mempelai" style="padding:80px 64px;">
+  <div class="particles-container"></div>
+
+  <!-- Tenun top border -->
+  <div style="position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;"></div>
+
+  <div class="mempelai-container">
+    <div class="section-title-wrap animate-on-scroll">
+      <span class="section-eyebrow">✦ The Couple ✦</span>
+      <h2 class="section-title">Mempelai <span>Bahagia</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line right"></div>
+      </div>
+    </div>
+
+    <!-- Bismillah / Opening -->
+    <div class="animate-on-scroll" style="text-align:center; margin-bottom:40px; font-family:'Cormorant Garamond',serif; font-size:16px; font-style:italic; color:rgba(168,200,240,0.9); line-height:1.8; max-width:560px; margin-left:auto; margin-right:auto;">
+      "Dengan memohon berkat dan rahmat Tuhan Yang Maha Esa, kami mengundang Bapak/Ibu/Saudara/i untuk menyaksikan momen sakral pernikahan putra-putri kami."
+    </div>
+
+    <div class="mempelai-grid">
+      <!-- Mempelai Pria -->
+      <div class="mempelai-card animate-on-scroll" style="transition-delay:0.1s;">
+        <div class="mempelai-photo-wrap">
+          <img src="Mempelai Pria.jpg" alt="Mempelai Pria" class="mempelai-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="photo-placeholder" style="display:none;">
+            <span>👨</span>
+            <span style="font-size:11px;font-family:'Cinzel',serif;letter-spacing:1px;color:rgba(201,168,76,0.7);margin-top:6px;">MEMPELAI<br>PRIA</span>
+          </div>
+          <div class="photo-glow"></div>
+        </div>
+        <div class="mempelai-role">Mempelai Pria</div>
+        <div class="mempelai-name">Yohannes<br>Petrus Ndolu</div>
+        <div class="mempelai-parent">
+          Putra dari<br/>
+          <strong>Bapak Andreas Ndolu</strong><br/>
+          &amp; <strong>Ibu Rosalia Bire</strong>
+        </div>
+      </div>
+
+      <!-- Center -->
+      <div class="mempelai-center animate-on-scroll" style="transition-delay:0.2s;">
+        <div class="hearts-decoration">
+          <div class="heart-dot"></div>
+          <div class="heart-dot"></div>
+          <div class="heart-dot"></div>
+        </div>
+        <div class="mempelai-and">&amp;</div>
+        <div class="hearts-decoration">
+          <div class="heart-dot"></div>
+          <div class="heart-dot"></div>
+          <div class="heart-dot"></div>
+        </div>
+      </div>
+
+      <!-- Mempelai Wanita -->
+      <div class="mempelai-card animate-on-scroll" style="transition-delay:0.3s;">
+        <div class="mempelai-photo-wrap">
+          <img src="Mempelai Wanita.jpg" alt="Mempelai Wanita" class="mempelai-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="photo-placeholder" style="display:none;">
+            <span>👰</span>
+            <span style="font-size:11px;font-family:'Cinzel',serif;letter-spacing:1px;color:rgba(201,168,76,0.7);margin-top:6px;">MEMPELAI<br>WANITA</span>
+          </div>
+          <div class="photo-glow"></div>
+        </div>
+        <div class="mempelai-role">Mempelai Wanita</div>
+        <div class="mempelai-name">Maria<br>Magdalena Bana</div>
+        <div class="mempelai-parent">
+          Putri dari<br/>
+          <strong>Bapak Kornelius Bana</strong><br/>
+          &amp; <strong>Ibu Yuliana Haning</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tenun bottom border -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;"></div>
+</section>
+
+<!-- ==================== SECTION: LOVE STORY ==================== -->
+<section id="love-story" style="padding:80px 64px; background:linear-gradient(180deg,#0e1f40 0%,#1a3a6e 50%,#0e1f40 100%);">
+
+  <!-- Lontar tree decoration -->
+  <div style="position:absolute;right:70px;top:50%;transform:translateY(-50%);opacity:0.06;pointer-events:none;">
+    <svg width="140" height="280" viewBox="0 0 160 250" xmlns="http://www.w3.org/2000/svg">
+      <rect x="72" y="80" width="16" height="170" rx="8" fill="white"/>
+      <ellipse cx="80" cy="60" rx="60" ry="20" fill="white" transform="rotate(-20,80,60)"/>
+      <ellipse cx="80" cy="60" rx="60" ry="20" fill="white" transform="rotate(20,80,60)"/>
+      <ellipse cx="80" cy="60" rx="60" ry="15" fill="white"/>
+      <ellipse cx="80" cy="60" rx="55" ry="15" fill="white" transform="rotate(-40,80,60)"/>
+      <ellipse cx="80" cy="60" rx="55" ry="15" fill="white" transform="rotate(40,80,60)"/>
+      <circle cx="80" cy="85" r="8" fill="white" opacity="0.6"/>
+      <circle cx="68" cy="88" r="7" fill="white" opacity="0.6"/>
+      <circle cx="92" cy="88" r="7" fill="white" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="love-story-container">
+    <div class="section-title-wrap animate-on-scroll">
+      <span class="section-eyebrow">✦ Perjalanan Cinta ✦</span>
+      <h2 class="section-title">Our <span>Love Story</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line right"></div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-event">Pertemuan Pertama</div>
+          <div class="timeline-desc">Dua jiwa bertemu di bumi Rote Ndao yang indah. Senyum pertama yang tak terlupakan menjadi awal dari segalanya.</div>
+        </div>
+        <div class="timeline-node">💫</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">❤️</div>
+        <div class="timeline-content">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-event">Jatuh Cinta</div>
+          <div class="timeline-desc">Seperti irama sasando yang merdu, hati kami bergetar bersama. Perasaan yang tumbuh perlahan namun pasti.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-event">Melamar</div>
+          <div class="timeline-desc">Di bawah pohon lontar yang teduh dengan latar laut selatan yang biru, dia berlutut dan memintaku menjadi pendampingnya seumur hidup.</div>
+        </div>
+        <div class="timeline-node">💍</div>
+        <div class="timeline-empty"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-empty"></div>
+        <div class="timeline-node">🌴</div>
+        <div class="timeline-content">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-event">Prewedding</div>
+          <div class="timeline-desc">Mengabadikan momen indah bersama di tanah kelahiran Rote Ndao — antara tenun, sasando, dan deburan ombak.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-event">Hari Pernikahan</div>
+          <div class="timeline-desc">Hari yang paling dinantikan tiba. Kami resmi bersatu dalam ikatan suci pernikahan adat Rote Ndao yang penuh makna dan keberkahan.</div>
+        </div>
+        <div class="timeline-node">🕊️</div>
+        <div class="timeline-empty"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: ACARA ==================== -->
+<section id="acara" style="padding:80px 64px;">
+  <!-- Tenun top -->
+  <div style="position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;"></div>
+
+  <div class="acara-container">
+    <div class="section-title-wrap animate-on-scroll">
+      <span class="section-eyebrow">✦ Rangkaian Acara ✦</span>
+      <h2 class="section-title">Waktu & <span>Tempat</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line right"></div>
+      </div>
+    </div>
+
+    <div class="acara-grid">
+      <!-- Akad Nikah -->
+      <div class="acara-card animate-on-scroll" style="transition-delay:0.1s;">
+        <span class="acara-icon">⛪</span>
+        <div class="acara-type">Akad Nikah</div>
+        <div class="acara-name">Pemberkatan Nikah</div>
+        <div class="acara-detail">
+          <strong>Hari &amp; Tanggal</strong>
+          Sabtu, 12 Juli 2026
+        </div>
+        <div class="acara-detail">
+          <strong>Waktu</strong>
+          08.00 – 10.00 WITA
+        </div>
+        <div class="acara-detail">
+          <strong>Tempat</strong>
+          Gereja Masehi Injili Timor (GMIT) Jemaat Bethlehem, Rote Ndao, NTT
+        </div>
+        <a class="btn-maps" href="https://maps.google.com/?q=Gereja+GMIT+Rote+Ndao+NTT" target="_blank">
+          📍 Buka Google Maps
+        </a>
+      </div>
+
+      <!-- Resepsi -->
+      <div class="acara-card animate-on-scroll" style="transition-delay:0.2s;">
+        <span class="acara-icon">🎊</span>
+        <div class="acara-type">Resepsi Pernikahan</div>
+        <div class="acara-name">Pesta Pernikahan</div>
+        <div class="acara-detail">
+          <strong>Hari &amp; Tanggal</strong>
+          Sabtu, 12 Juli 2026
+        </div>
+        <div class="acara-detail">
+          <strong>Waktu</strong>
+          11.00 – Selesai WITA
+        </div>
+        <div class="acara-detail">
+          <strong>Tempat</strong>
+          Aula Besar Keluarga Ndolu, Jl. Lontar Indah No. 5, Rote Ndao, NTT
+        </div>
+        <a class="btn-maps" href="https://maps.google.com/?q=Rote+Ndao+NTT" target="_blank">
+          📍 Buka Google Maps
+        </a>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="animate-on-scroll" style="text-align:center; margin-top:20px;">
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--gold); margin-bottom:16px; text-transform:uppercase;">Hitung Mundur Hari Bahagia</div>
+      <div id="countdown" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+        <div class="countdown-box" id="cd-days">
+          <div class="cd-num">--</div><div class="cd-label">Hari</div>
+        </div>
+        <div class="countdown-box" id="cd-hours">
+          <div class="cd-num">--</div><div class="cd-label">Jam</div>
+        </div>
+        <div class="countdown-box" id="cd-mins">
+          <div class="cd-num">--</div><div class="cd-label">Menit</div>
+        </div>
+        <div class="countdown-box" id="cd-secs">
+          <div class="cd-num">--</div><div class="cd-label">Detik</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tenun bottom -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;"></div>
+</section>
+
+<!-- ==================== SECTION: GALLERY ==================== -->
+<section id="gallery" style="padding:80px 64px; background:linear-gradient(180deg,#0a1628 0%,#0d2045 100%);">
+  <div class="particles-container"></div>
+
+  <div class="section-title-wrap animate-on-scroll">
+    <span class="section-eyebrow">✦ Momen Indah ✦</span>
+    <h2 class="section-title">Galeri <span>Foto</span></h2>
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line right"></div>
+    </div>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--sky-blue); font-size:15px; margin-top:12px;">Kenangan indah dari sesi pemotretan prewedding kami</p>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid">
+    <!-- Generated by JS below -->
+  </div>
+</section>
+
+<!-- ==================== SECTION: HADIAH ==================== -->
+<section id="hadiah" style="padding:80px 64px; background:linear-gradient(180deg,#0d2045 0%,#1a3a6e 50%,#0d2045 100%);">
+  <!-- Tenun top -->
+  <div style="position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;"></div>
+
+  <div class="hadiah-container">
+    <div class="section-title-wrap animate-on-scroll">
+      <span class="section-eyebrow">✦ Hadiah Pernikahan ✦</span>
+      <h2 class="section-title">Kirim <span>Hadiah</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line right"></div>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--sky-blue); font-size:15px; margin-top:12px;">Doa restu Anda adalah hadiah terindah bagi kami. Namun jika ingin memberikan hadiah, Anda bisa mentransfer ke rekening berikut</p>
+    </div>
+
+    <div class="atm-cards-wrap">
+      <!-- ATM Pria -->
+      <div class="atm-card pria animate-on-scroll" style="transition-delay:0.1s;">
+        <div class="atm-shimmer"></div>
+        <div class="atm-chip">
+          <svg width="48" height="36" viewBox="0 0 48 36" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;">
+            <rect x="1" y="1" width="46" height="34" rx="5" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+            <line x1="1" y1="12" x2="47" y2="12" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+            <line x1="1" y1="24" x2="47" y2="24" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+            <line x1="18" y1="1" x2="18" y2="35" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+            <line x1="30" y1="1" x2="30" y2="35" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <div class="atm-contactless">◎</div>
+        <div class="atm-logo">WEDDING</div>
+        <div class="atm-number">1234 5678 9012 3456</div>
+        <div class="atm-holder">
+          <div class="atm-holder-label">ATAS NAMA</div>
+          <div class="atm-holder-name">YOHANNES P. NDOLU</div>
+        </div>
+        <div class="atm-bank">BRI</div>
+        <button class="atm-copy-btn" data-copy="1234567890123456" onclick="copyRek(this)">
+          📋 Salin Nomor Rekening
+        </button>
+      </div>
+
+      <!-- ATM Wanita -->
+      <div class="atm-card wanita animate-on-scroll" style="transition-delay:0.2s;">
+        <div class="atm-shimmer"></div>
+        <div class="atm-chip">
+          <svg width="48" height="36" viewBox="0 0 48 36" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;">
+            <rect x="1" y="1" width="46" height="34" rx="5" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+            <line x1="1" y1="12" x2="47" y2="12" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+            <line x1="1" y1="24" x2="47" y2="24" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+            <line x1="18" y1="1" x2="18" y2="35" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+            <line x1="30" y1="1" x2="30" y2="35" stroke="rgba(255,255,255,0.25)" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <div class="atm-contactless">◎</div>
+        <div class="atm-logo">WEDDING</div>
+        <div class="atm-number">6543 2109 8765 4321</div>
+        <div class="atm-holder">
+          <div class="atm-holder-label">ATAS NAMA</div>
+          <div class="atm-holder-name">MARIA M. BANA</div>
+        </div>
+        <div class="atm-bank">BNI</div>
+        <button class="atm-copy-btn" data-copy="6543210987654321" onclick="copyRek(this)">
+          📋 Salin Nomor Rekening
+        </button>
+      </div>
+    </div>
+
+    <div class="animate-on-scroll" style="text-align:center; margin-top:32px; font-family:'Cormorant Garamond',serif; font-style:italic; color:rgba(168,200,240,0.7); font-size:14px;">
+      * Klik tombol salin untuk menyalin nomor rekening *
+    </div>
+  </div>
+
+  <!-- Tenun bottom -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;"></div>
+</section>
+
+<!-- ==================== SECTION: UCAPAN ==================== -->
+<section id="ucapan" style="padding:80px 64px;">
+
+  <!-- Sasando decoration -->
+  <div style="position:absolute;left:70px;top:50%;transform:translateY(-50%);opacity:0.05;pointer-events:none;">
+    <svg width="200" height="200" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="30" cy="38" rx="22" ry="14" fill="none" stroke="white" stroke-width="2"/>
+      <ellipse cx="30" cy="38" rx="16" ry="10" fill="none" stroke="white" stroke-width="1.5"/>
+      <rect x="28" y="4" width="4" height="36" rx="2" fill="white"/>
+      <line x1="14" y1="30" x2="46" y2="30" stroke="white" stroke-width="1.2"/>
+      <line x1="12" y1="36" x2="48" y2="36" stroke="white" stroke-width="1.2"/>
+      <line x1="12" y1="42" x2="48" y2="42" stroke="white" stroke-width="1.2"/>
+      <line x1="16" y1="46" x2="44" y2="46" stroke="white" stroke-width="1.2"/>
+      <circle cx="30" cy="6" r="4" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="30" cy="6" r="2" fill="white"/>
+    </svg>
+  </div>
+
+  <div class="ucapan-container">
+    <div class="section-title-wrap animate-on-scroll">
+      <span class="section-eyebrow">✦ Ucapan & Doa ✦</span>
+      <h2 class="section-title">Kirim <span>Ucapan</span></h2>
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line right"></div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="ucapan-form animate-on-scroll">
+      <div class="form-group">
+        <label class="form-label" for="ucapan-name">Nama Anda</label>
+        <input id="ucapan-name" type="text" class="form-input" placeholder="Masukkan nama Anda..."/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ucapan-attend">Konfirmasi Kehadiran</label>
+        <select id="ucapan-attend" class="form-select">
+          <option value="Hadir">✅ Hadir</option>
+          <option value="Tidak Hadir">❌ Tidak Hadir</option>
+          <option value="Masih Ragu">🤔 Masih Ragu</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ucapan-message">Ucapan & Doa</label>
+        <textarea id="ucapan-message" class="form-textarea" placeholder="Tuliskan ucapan dan doa terbaik untuk mempelai..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="ucapan-emoji">Pilih Emoji</label>
+        <select id="ucapan-emoji" class="form-select">
+          <option value="💝">💝 Cinta</option>
+          <option value="💒">💒 Pernikahan</option>
+          <option value="🙏">🙏 Doa</option>
+          <option value="🌹">🌹 Bunga</option>
+          <option value="✨">✨ Bintang</option>
+          <option value="🎉">🎉 Selamat</option>
+          <option value="🕊️">🕊️ Kedamaian</option>
+          <option value="🌴">🌴 Rote Ndao</option>
+        </select>
+      </div>
+      <button id="submit-ucapan" class="btn-submit" onclick="submitUcapan()">
+        💌 Kirim Ucapan & Doa
+      </button>
+    </div>
+
+    <!-- List ucapan -->
+    <div class="animate-on-scroll" style="transition-delay:0.2s;">
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px; color:var(--gold); text-align:center; margin-bottom:20px; text-transform:uppercase;">— Ucapan Dari Tamu Undangan —</div>
+      <div class="ucapan-list" id="ucapan-list">
+        <div class="loading-wrap">
+          <div class="loading-dot"></div>
+          <div class="loading-dot"></div>
+          <div class="loading-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION: PENUTUP ==================== -->
+<section id="penutup" style="padding:80px 64px; background:linear-gradient(180deg,#0d2045 0%,#0a1628 100%);">
+  <!-- Tenun top -->
+  <div style="position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;"></div>
+
+  <div class="penutup-container">
+    <div class="penutup-frame animate-on-scroll">
+      <div class="corner-ornament tl"></div>
+      <div class="corner-ornament tr"></div>
+      <div class="corner-ornament bl"></div>
+      <div class="corner-ornament br"></div>
+
+      <div class="penutup-icon">🕊️</div>
+
+      <div class="penutup-title">Terima Kasih</div>
+
+      <div class="section-divider" style="margin-bottom:24px;">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line right"></div>
+      </div>
+
+      <div class="penutup-text">
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.
+        <br/><br/>
+        Atas kehadiran dan doa restu yang diberikan, kami mengucapkan terima kasih yang sebesar-besarnya.
+        <br/><br/>
+        <em>"Kasih itu sabar, kasih itu murah hati, ia tidak cemburu. Ia tidak memegahkan diri dan tidak sombong."</em>
+        <br/>— 1 Korintus 13:4 —
+      </div>
+
+      <!-- Sasando mini -->
+      <div style="margin:20px 0; opacity:0.6;">
+        <svg width="50" height="50" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="38" rx="22" ry="14" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+          <rect x="28" y="4" width="4" height="36" rx="2" fill="#c9a84c"/>
+          <line x1="14" y1="32" x2="46" y2="32" stroke="#e8c96a" stroke-width="0.8"/>
+          <line x1="14" y1="38" x2="46" y2="38" stroke="#e8c96a" stroke-width="0.8"/>
+          <line x1="18" y1="44" x2="42" y2="44" stroke="#e8c96a" stroke-width="0.8"/>
+          <circle cx="30" cy="6" r="4" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+          <circle cx="30" cy="6" r="1.5" fill="#c9a84c"/>
+        </svg>
+      </div>
+
+      <div class="penutup-couple">Yohannes &amp; Maria</div>
+
+      <div style="margin-top:16px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px; color:var(--gold-light); opacity:0.7;">
+        SABTU, 12 JULI 2026 ✦ ROTE NDAO, NTT
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <!-- Tenun border -->
+  <div style="height:14px;background:repeating-linear-gradient(90deg,#c9a84c 0,#c9a84c 8px,#0a1628 8px,#0a1628 16px,#2563a8 16px,#2563a8 20px,#0a1628 20px,#0a1628 28px,#c9a84c 28px,#c9a84c 36px);opacity:0.8;margin-bottom:24px;"></div>
+
+  <div class="footer-design">✦ Design by Zhald_Design ✦</div>
+
+  <div class="footer-socials">
+    <a class="footer-social-btn" href="https://instagram.com/rijaldelimanafe" target="_blank">
+      📸 @rijaldelimanafe
+    </a>
+    <a class="footer-social-btn" href="https://wa.me/6281338596854" target="_blank">
+      💬 081338596854
+    </a>
+  </div>
+
+  <div class="footer-copy">© 2026 Zhald_Design — Undangan Pernikahan Digital Adat Rote Ndao</div>
+</footer>
+
+</div><!-- end #main-invitation -->
+
+<!-- ===================================================
+     EXTRA INLINE STYLES for countdown boxes & gallery
+     =================================================== -->
+<style>
+.countdown-box {
+  background: linear-gradient(135deg,rgba(13,32,69,0.9),rgba(26,58,110,0.7));
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 80px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.countdown-box:hover { border-color: var(--gold); transform: translateY(-2px); }
+.cd-num {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+}
+.cd-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--sky-blue);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+section { position: relative; }
+</style>
+
+<!-- ===================================================
+     SCRIPTS
+     =================================================== -->
+<script>
+// Baca nama tamu dari URL ?kepada=...
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const tamu = params.get('kepada');
+  if (tamu) {
+    const el = document.getElementById('sapaan-tamu');
+    const nm = document.getElementById('nama-tamu-display');
+    if (el && nm) {
+      nm.textContent = tamu;
+      el.style.display = 'block';
+    }
+  }
+})();
+</script>
+<script src="script.js"></script>
+<script>
+// ===== GALLERY GENERATION =====
+(function buildGallery() {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+  let html = '';
+  for (let i = 1; i <= 20; i++) {
+    html += `
+      <div class="gallery-item animate-on-scroll" data-src="Foto${i}.jpg" style="transition-delay:${(i-1)*0.04}s;">
+        <img src="Foto${i}.jpg" alt="Foto Prewedding ${i}" loading="lazy"
+          onerror="this.parentElement.classList.add('no-photo');this.style.display='none';"/>
+        <div class="gallery-overlay">
+          <span class="gallery-photo-num">FOTO ${i}</span>
+        </div>
+      </div>
+    `;
+  }
+  grid.innerHTML = html;
+  // Re-init scroll animations for gallery items
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  grid.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+})();
+
+// ===== COUNTDOWN =====
+(function countdown() {
+  const target = new Date('2026-07-12T08:00:00+08:00');
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').querySelector('.cd-num').textContent = '00';
+      document.getElementById('cd-hours').querySelector('.cd-num').textContent = '00';
+      document.getElementById('cd-mins').querySelector('.cd-num').textContent = '00';
+      document.getElementById('cd-secs').querySelector('.cd-num').textContent = '00';
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const secs = Math.floor((diff % (1000*60)) / 1000);
+    const pad = n => String(n).padStart(2,'0');
+    document.getElementById('cd-days').querySelector('.cd-num').textContent = pad(days);
+    document.getElementById('cd-hours').querySelector('.cd-num').textContent = pad(hours);
+    document.getElementById('cd-mins').querySelector('.cd-num').textContent = pad(mins);
+    document.getElementById('cd-secs').querySelector('.cd-num').textContent = pad(secs);
+  }
+  update();
+  setInterval(update, 1000);
+})();
+
+// ===== COPY REK =====
+function copyRek(btn) {
+  const num = btn.getAttribute('data-copy');
+  navigator.clipboard.writeText(num).then(() => {
+    showToast('✓ Nomor Rekening Berhasil Disalin!');
+  }).catch(() => {
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = num;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('✓ Nomor Rekening Berhasil Disalin!');
+  });
+}
+</script>
+
+</body>
+</html>

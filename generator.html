@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generator Link Undangan — Zhald_Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0a1628; --gold: #c9a84c; --gold-l: #e8c96a;
+      --gold-d: #9a7a2e; --sky: #a8c8f0; --royal: #1a3a6e;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--navy);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, rgba(13,32,69,0.95), rgba(26,58,110,0.8));
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      box-shadow: 0 0 0 8px rgba(201,168,76,0.07), 0 0 60px rgba(201,168,76,0.15);
+    }
+    .card::before {
+      content:'';
+      position:absolute;
+      inset:10px;
+      border:1px solid rgba(201,168,76,0.25);
+      border-radius:12px;
+      pointer-events:none;
+    }
+
+    .corner { position:absolute; width:32px; height:32px; border-color:var(--gold); border-style:solid; }
+    .corner.tl { top:4px; left:4px; border-width:2px 0 0 2px; }
+    .corner.tr { top:4px; right:4px; border-width:2px 2px 0 0; }
+    .corner.bl { bottom:4px; left:4px; border-width:0 0 2px 2px; }
+    .corner.br { bottom:4px; right:4px; border-width:0 2px 2px 0; }
+
+    .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+      color: white;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .divider {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 28px;
+    }
+    .divider-line { flex:1; height:1px; background:linear-gradient(to right,transparent,var(--gold),transparent); }
+    .divider-diamond { width:7px; height:7px; background:var(--gold); transform:rotate(45deg); flex-shrink:0; }
+
+    label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    input[type="text"] {
+      width: 100%;
+      background: rgba(10,22,40,0.8);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 10px;
+      padding: 13px 16px;
+      color: white;
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      margin-bottom: 20px;
+    }
+    input[type="text"]:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+    input[type="text"]::placeholder { color: rgba(255,255,255,0.25); }
+
+    .btn-generate {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-d));
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-generate:hover {
+      background: linear-gradient(135deg, var(--gold-l), var(--gold));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+    }
+
+    /* RESULT */
+    #result {
+      margin-top: 24px;
+      display: none;
+    }
+    .result-label {
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .link-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(10,22,40,0.9);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+    .link-text {
+      flex: 1;
+      font-size: 12px;
+      color: var(--sky);
+      word-break: break-all;
+      line-height: 1.5;
+    }
+    .btn-copy {
+      flex-shrink: 0;
+      padding: 8px 14px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 8px;
+      color: var(--gold-l);
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-copy:hover { background: rgba(201,168,76,0.3); }
+    .btn-copy.copied { background: rgba(34,197,94,0.2); border-color: rgba(34,197,94,0.5); color: #86efac; }
+
+    .btn-wa {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
+
+    /* preview nama tamu di link */
+    .tamu-preview {
+      text-align: center;
+      margin-bottom: 10px;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: var(--sky);
+    }
+    .tamu-preview strong {
+      color: var(--gold-l);
+      font-size: 15px;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 28px;
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      background: linear-gradient(135deg, var(--gold), var(--gold-d));
+      color: white;
+      padding: 10px 24px;
+      border-radius: 24px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    #toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+<div id="toast"></div>
+
+<div class="card">
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="logo">Yohannes & Maria</div>
+  <div class="eyebrow">✦ Generator Link Undangan ✦</div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-diamond"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <label for="nama-tamu">Nama Tamu Undangan</label>
+  <input type="text" id="nama-tamu" placeholder="Contoh: Bapak & Ibu Yusuf" autocomplete="off"/>
+
+  <button class="btn-generate" onclick="generate()">
+    🔗 Generate Link Undangan
+  </button>
+
+  <div id="result">
+    <div class="divider" style="margin-top:24px;">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="tamu-preview">Link untuk: <strong id="nama-preview"></strong></div>
+
+    <div class="result-label">Link Undangan</div>
+    <div class="link-box">
+      <span class="link-text" id="link-display"></span>
+      <button class="btn-copy" id="copy-btn" onclick="copyLink()">Salin</button>
+    </div>
+
+    <a class="btn-wa" id="wa-btn" href="#" target="_blank">
+      <span>💬</span>
+      <span>Bagikan via WhatsApp</span>
+    </a>
+  </div>
+
+  <div class="footer-note">Design by Zhald_Design · @rijaldelimanafe</div>
+</div>
+
+<script>
+  let generatedLink = '';
+
+  function generate() {
+    const nama = document.getElementById('nama-tamu').value.trim();
+    if (!nama) {
+      showToast('Masukkan nama tamu terlebih dahulu!');
+      return;
+    }
+
+    // Ambil base URL dari lokasi generator.html ini
+    const base = window.location.href.replace('generator.html', 'index.html');
+    const encoded = encodeURIComponent(nama);
+    generatedLink = `${base}?kepada=${encoded}`;
+
+    document.getElementById('nama-preview').textContent = nama;
+    document.getElementById('link-display').textContent = generatedLink;
+
+    // WhatsApp
+    const waText = encodeURIComponent(
+      `Kepada Yth.\n${nama}\n\nDengan hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.\n\nSilakan buka undangan di:\n${generatedLink}\n\nAtas kehadiran dan doa restu Anda, kami ucapkan terima kasih. 🙏`
+    );
+    document.getElementById('wa-btn').href = `https://wa.me/?text=${waText}`;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('copy-btn').textContent = 'Salin';
+    document.getElementById('copy-btn').className = 'btn-copy';
+    showToast('Link berhasil dibuat! ✓');
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(generatedLink).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Disalin';
+      btn.className = 'btn-copy copied';
+      showToast('Link disalin! ✓');
+      setTimeout(() => {
+        btn.textContent = 'Salin';
+        btn.className = 'btn-copy';
+      }, 2500);
+    });
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  // Enter key shortcut
+  document.getElementById('nama-tamu').addEventListener('keydown', e => {
+    if (e.key === 'Enter') generate();
+  });
+</script>
+</body>
+</html>
